@@ -1,1 +1,26 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - main  # Modify this if your main branch has a different name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # Add additional steps here if needed, such as running tests
+
 
